@@ -19,7 +19,7 @@
             <h5 class="card-title">{{ $product->Name }}</h5>
             <p class="card-text">{{ $product->Description }}</p>
             <p class="card-text">&#8377; {{ $product->Price }}</p>
-            <a href="{{ route('productDetails') }}/{{ $product->id }}" class="btn btn-primary">Buy Now</a>
+            <a href="{{ route('productDetails') }}/{{ base64_encode($product->id) }}" class="btn btn-primary">Buy Now</a>
           </div>
         </div>
       </div>

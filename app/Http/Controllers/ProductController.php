@@ -16,7 +16,7 @@ class ProductController extends Controller
 
     public function productDetails(Request $request)
     {
-        $data['product'] = Products::getProductDetails($request->id);
+        $data['product'] = Products::getProductDetails(base64_decode($request->id));
         $user = Auth::user();
         $data['user'] = $user;
         $data['intent'] = $user->createSetupIntent();
